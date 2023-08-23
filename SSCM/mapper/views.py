@@ -1,6 +1,6 @@
 from django.shortcuts import render
 import geemap.foliumap as geemap
-import keys 
+from . import keys 
 import ee 
 import json 
 
