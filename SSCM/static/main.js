@@ -55,22 +55,11 @@ map.on('draw:created', function(e) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
 
             }
-
             console.log(response)
-            return response.json();
-        })
-        .then(data => {
-            // Handle the response data
-            console.log('Response:', data);
 
-            const mapDiv = document.getElementById('map');
-            // mapDiv.innerHTML = data.map
+            if (response.redirected) {
+                window.location.href = response.url;
+            }
         })
-        .catch(error => {
-            console.error('Error sending data:', error);
-            return error.text(); // This line will get the response text
-        })
-        .then(responseText => {
-            console.log('Server Response:', responseText);
-        });
+
 });
