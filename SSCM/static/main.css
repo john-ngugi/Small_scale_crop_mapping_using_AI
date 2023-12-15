@@ -1,4 +1,17 @@
-.map {
+.display-1 {
+    display: flex;
+}
+
+#map {
     width: 100vw;
     height: 100vh;
+    position: absolute;
+}
+
+.stats {
+    position: relative;
+    z-index: 999;
+    width: 50vw;
+    height: 100vh;
+    overflow-y: scroll;
 }
