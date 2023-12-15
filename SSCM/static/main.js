@@ -64,7 +64,7 @@ map.on('draw:created', function(e) {
             console.log('Response:', data);
 
             const mapDiv = document.getElementById('map');
-            mapDiv.innerHTML = data.map
+            // mapDiv.innerHTML = data.map
         })
         .catch(error => {
             console.error('Error sending data:', error);

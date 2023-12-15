@@ -70,10 +70,32 @@ def newIndex(request):
             }
             print('complete')
             print(context)
+            return render(request,'map.html',context)
+            # w=0
+
+            # for x in range(0,1):
+            #    if x ==0 and w == 0:
+            #           return JsonResponse(context)
+            #    if x ==1 and w == 1: 
+            #       return render(request,'map.html',context)
+            # return JsonResponse(context)
+      # else:
+            # ROI1 = ee.FeatureCollection()
+            # #importing the image collection and filtering the date and cloud percentage and mapping the cloud filter function 
+            # S2 = ee.ImageCollection('COPERNICUS/S2').filterDate('2018-05-01','2018-05-30').filterBounds(ROI1)
+            # print(list(S2.getInfo()))
+            # # print(S2.getInfo())
+            # # print(S2.median().getBandInfo())
+            # ndvi = S2.median().normalizedDifference(['B8','B4'])
+            # indecesVis = {'min': 0 ,"max": 1, 'palette': ['red','white','green']}
+            # Map.addLayer(ndvi,indecesVis,"ndviLayer")
+            # context ={
+            #       'map': Map.to_html()
+            # }
+            # print('complete')
+            # print(context)
             # return render(request,'map.html',context)
-            return JsonResponse(context)
-      else:
-              return render(request,'map.html')
+   return render(request,'map.html')
 def mainPage(request):
        return render(request,'base.html')
 
